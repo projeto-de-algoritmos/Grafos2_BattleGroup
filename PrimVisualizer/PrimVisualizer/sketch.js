@@ -12,13 +12,24 @@ function setup() {
   createNodes();
 }
 
-function draw() {
-  background(220);
-  
+function drawNodes() {
+  nodes.forEach((node) => {
+    fill(0, 220, 0);
+    ellipse(node.location.x, node.location.y, 20);
+    fill(0);
+    textAlign(CENTER);
+    textSize(12);
+    text(node.index, node.location.x, node.location.y);
+  });
 }
 
-function createNodes(){ 
-  for(let i = 0; i < 50;i++){
-    nodes.push(new Node(createVector(random(width), random(height)),i));
+function draw() {
+  background(220);
+  drawNodes();
+}
+
+function createNodes() {
+  for (let i = 0; i < 50; i++) {
+    nodes.push(new Node(createVector(random(width), random(height)), i));
   }
 }
