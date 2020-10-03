@@ -107,7 +107,7 @@ function prim() {
 function doCalculation() {
   if (unreached.length > 0) {
     calculateConnection();
-    setTimeout(doCalculation, 2000);
+    setTimeout(doCalculation, 1000);
   } else {
     console.log("Terminou");
   }
